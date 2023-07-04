@@ -1,0 +1,10 @@
+{
+  "editor.rulers": [
+    80,
+  ],
+ "editor.tabSize": 2,
+ "editor.insertSpaces": true,
+ "files.eol": "\n",
+ "editor.formatOnSave": true
+
+}

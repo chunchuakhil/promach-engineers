@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "dzannotti.vscode-babel-coloring",
+    "dbaeumer.vscode-eslint",
+    "ms-vscode.vscode-typescript-next",
+    "pkief.material-icon-theme",
+    "christian-kohler.npm-intellisense",
+    "esbenp.prettier-vscode",
+    "rvest.vs-code-prettier-eslint",
+    "sumitnalavade.vscode-readme-editor",
+    "formulahendry.auto-rename-tag",
+    "dsznajder.es7-react-js-snippets"
+  ]
+}
