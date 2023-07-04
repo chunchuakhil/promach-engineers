@@ -6,7 +6,8 @@
  "editor.insertSpaces": true,
  "files.eol": "\n",
  "editor.formatOnSave": true,
-  "eslint.validate": [
+ "editor.formatOnType": true,
+ "eslint.validate": [
     "javascript",
     "javascriptreact",
     "typescript",
@@ -14,5 +15,5 @@
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
-  }
+  },
 }
