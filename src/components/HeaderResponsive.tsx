@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import {
   createStyles,
   Header,
@@ -8,19 +8,19 @@ import {
   Paper,
   Transition,
   rem,
-  Image
-} from '@mantine/core';
+  Image,
+} from '@mantine/core'
 // import logo from './logo.png';
 
-import { useDisclosure } from '@mantine/hooks';
+import { useDisclosure } from '@mantine/hooks'
 // import { MantineLogo } from '@mantine/ds';
 
-const HEADER_HEIGHT = rem(60);
+export const HEADER_HEIGHT = rem(100)
 
 const useStyles = createStyles((theme) => ({
   root: {
-    position: 'relative',
-    zIndex: 1,
+    position: 'fixed',
+    zIndex: 100000,
   },
 
   dropdown: {
@@ -33,6 +33,7 @@ const useStyles = createStyles((theme) => ({
     borderTopLeftRadius: 0,
     borderTopWidth: 0,
     overflow: 'hidden',
+    paddingTop: '20px',
 
     [theme.fn.largerThan('sm')]: {
       display: 'none',
@@ -61,7 +62,7 @@ const useStyles = createStyles((theme) => ({
   link: {
     display: 'block',
     lineHeight: 1,
-    padding: `${rem(8)} ${rem(12)}`,
+    padding: `${rem(12)} ${rem(12)}`,
     borderRadius: theme.radius.sm,
     textDecoration: 'none',
     color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
@@ -84,16 +85,16 @@ const useStyles = createStyles((theme) => ({
       color: theme.fn.variant({ variant: 'light', color: theme.primaryColor }).color,
     },
   },
-}));
+}))
 
 interface HeaderResponsiveProps {
-  links: { link: string; label: string }[];
+  links: { link: string; label: string }[]
 }
 
 export function HeaderResponsive({ links }: HeaderResponsiveProps) {
-  const [opened, { toggle, close }] = useDisclosure(false);
-  const [active, setActive] = useState(links[0].link);
-  const { classes, cx } = useStyles();
+  const [opened, { toggle, close }] = useDisclosure(false)
+  const [active, setActive] = useState(links[0].link)
+  const { classes, cx } = useStyles()
 
   const items = links.map((link) => (
     <a
@@ -101,26 +102,31 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
       href={link.link}
       className={cx(classes.link, { [classes.linkActive]: active === link.link })}
       onClick={(event) => {
-        event.preventDefault();
-        setActive(link.link);
-        close();
+        event.preventDefault()
+        setActive(link.link)
+        close()
       }}
     >
       {link.label}
     </a>
-  ));
+  ))
 
   return (
-    <Header height={HEADER_HEIGHT} mb={120} className={classes.root}>
+    <Header height={HEADER_HEIGHT} mb={20} className={classes.root}>
       <Container className={classes.header}>
-        <Image width={'auto'} height={40} src={ 'https://www.promach.in/assets/images/logo.png'} alt="Random image" />
+        <Image
+          width={'auto'}
+          height={40}
+          src={'https://www.promach.in/assets/images/logo.png'}
+          alt='Random image'
+        />
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
 
-        <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
+        <Burger opened={opened} onClick={toggle} className={classes.burger} size='sm' />
 
-        <Transition transition="pop-top-right" duration={200} mounted={opened}>
+        <Transition transition='pop-top-right' duration={200} mounted={opened}>
           {(styles) => (
             <Paper className={classes.dropdown} withBorder style={styles}>
               {items}
@@ -129,5 +135,5 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
         </Transition>
       </Container>
     </Header>
-  );
+  )
 }

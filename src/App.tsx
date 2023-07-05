@@ -1,29 +1,25 @@
-import { MantineProvider, Text } from '@mantine/core';
-import { HeaderResponsive } from './components/AppBar';
-interface HeaderResponsiveProps {
-  links: { link: string; label: string }[];
-}
+import { MantineProvider, Container } from '@mantine/core'
+import { HEADER_HEIGHT, HeaderResponsive } from './components/HeaderResponsive'
+import { appLinks } from './routes/Applinks'
 
-const AppBarLinks: HeaderResponsiveProps = {
-  links: [
-    {
-      link: 'https://mantine.dev',
-      label: 'Mantine',
-    },
-    {
-      link: 'https://mantine.dev/docs',
-      label: 'Docs',
-    },
-    {
-      link: 'https://github.com/mantine/mantine',
-      label: 'GitHub',
-    },
-  ],
-}
 export default function App() {
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS>
-      <HeaderResponsive links={AppBarLinks.links}/>
+      <HeaderResponsive links={appLinks.links} />
+      <body style={{ marginTop: HEADER_HEIGHT }}>
+        <Container mih={'100vh'} bg={'gray'}>
+          <h1>Home section</h1>
+        </Container>
+        <Container mih={'100vh'} bg={'blue'}>
+          Default container
+        </Container>
+        <Container mih={'100vh'} bg={'green'}>
+          Default container
+        </Container>
+        <Container mih={'100vh'} bg={'red'}>
+          Default container
+        </Container>
+      </body>
     </MantineProvider>
-  );
+  )
 }
