@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@fontsource/roboto": "^5.0.4",
+    "@mantine/carousel": "^6.0.16",
     "@mantine/core": "^6.0.16",
     "@mantine/hooks": "^6.0.16",
     "@testing-library/jest-dom": "^5.16.5",
