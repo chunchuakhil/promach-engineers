@@ -1,4 +1,4 @@
-import { createStyles, Image, Card, Text, Group, Button, getStylesRef, rem } from '@mantine/core'
+import { createStyles, Image, getStylesRef, rem } from '@mantine/core'
 import { Carousel } from '@mantine/carousel'
 // import { IconStar } from '@tabler/icons-react';
 
@@ -49,7 +49,7 @@ export function CarouselCard() {
         onClick={(e) => {
           e.stopPropagation()
         }}
-        fit="cover"
+        fit='cover'
         src={image}
         mah={'90vh'}
         width={'100vw'}

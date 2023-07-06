@@ -116,16 +116,14 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
       <Container className={classes.header}>
         <Image
           width={'auto'}
-          height={40}
+          height={50}
           src={'https://www.promach.in/assets/images/logo.png'}
-          alt='Random image'
+          alt='Promach logo'
         />
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
-
         <Burger opened={opened} onClick={toggle} className={classes.burger} size='sm' />
-
         <Transition transition='pop-top-right' duration={200} mounted={opened}>
           {(styles) => (
             <Paper className={classes.dropdown} withBorder style={styles}>
