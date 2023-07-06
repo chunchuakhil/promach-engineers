@@ -9,6 +9,7 @@
     "rvest.vs-code-prettier-eslint",
     "sumitnalavade.vscode-readme-editor",
     "formulahendry.auto-rename-tag",
-    "dsznajder.es7-react-js-snippets"
+    "dsznajder.es7-react-js-snippets",
+    "streetsidesoftware.code-spell-checker"
   ]
 }

@@ -2,6 +2,8 @@ import { MantineProvider, Container } from '@mantine/core'
 import { HEADER_HEIGHT, HeaderResponsive } from './components/HeaderResponsive'
 import { appLinks } from './routes/Applinks'
 import { CarouselCard } from './components/Caros/Caros'
+import { AboutSection } from './components/About'
+
 
 export default function App() {
   return (
@@ -13,7 +15,7 @@ export default function App() {
           Default container
         </Container>
         <Container mih={'100vh'} bg={'green'}>
-          Default container
+          <AboutSection />
         </Container>
         <Container mih={'100vh'} bg={'red'}>
           Default container
