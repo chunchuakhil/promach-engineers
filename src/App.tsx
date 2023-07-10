@@ -4,7 +4,14 @@ import { appLinks } from './routes/Applinks'
 import { CarouselCard } from './components/Caros/Caros'
 import { AboutSection } from './pages/About/About'
 import SectionContainer from './components/sectionContainer/SectionContainer'
-import { GallerySection } from './pages/gallery/GallerySection'
+import { FeaturesCards } from './pages/Whyus/Whyus'
+import {Productlist1} from './ProductPages/Productlist1'
+import { Productlist2 } from './ProductPages/Productlist2'
+import { Productlist3 } from './ProductPages/Productlist3'
+import { Productlist4 } from './ProductPages/Productlist4'
+import { Productlist5 } from './ProductPages/Productlist5'
+import { Productlist6 } from './ProductPages/Productlist6'
+import { GallerySection } from './pages/gallery/Gallery'
 
 export default function App() {
   return (
@@ -20,7 +27,27 @@ export default function App() {
         <SectionContainer>
           <GallerySection />
         </SectionContainer>
-        <SectionContainer>Default container</SectionContainer>
+        <SectionContainer>
+          <FeaturesCards />
+        </SectionContainer>
+        <SectionContainer>
+          <Productlist1 />
+        </SectionContainer>
+        <SectionContainer>
+          <Productlist2 />
+        </SectionContainer>
+        <SectionContainer>
+          <Productlist3 />
+        </SectionContainer>
+        <SectionContainer>
+          <Productlist4 />
+        </SectionContainer>
+        <SectionContainer>
+          <Productlist5 />
+        </SectionContainer>
+        <SectionContainer>
+          <Productlist6 />
+        </SectionContainer>
       </div>
     </MantineProvider>
   )
