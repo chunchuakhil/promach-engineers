@@ -12,22 +12,26 @@ import { Productlist4 } from './ProductPages/Productlist4'
 import { Productlist5 } from './ProductPages/Productlist5'
 import { Productlist6 } from './ProductPages/Productlist6'
 import { GallerySection } from './pages/gallery/Gallery'
+import ProductSection  from './pages/Product/ProductSection'
+// import { ProductSection } from './pages/Product/ProductSection'
+// import {GallerySection1} from './pages/gallery/Gallery1'
+// import { GallerySection1 } from './pages/gallery/Gallery1'
 
 export default function App() {
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS>
       <HeaderResponsive links={appLinks.links} />
       <div style={{ marginTop: HEADER_HEIGHT }}>
-        <SectionContainer>
+        {/* <SectionContainer>
           <CarouselCard />
         </SectionContainer>
         <SectionContainer>
           <AboutSection />
-        </SectionContainer>
+        </SectionContainer> */}
         <SectionContainer>
           <GallerySection />
         </SectionContainer>
-        <SectionContainer>
+        {/* <SectionContainer>
           <FeaturesCards />
         </SectionContainer>
         <SectionContainer>
@@ -47,6 +51,9 @@ export default function App() {
         </SectionContainer>
         <SectionContainer>
           <Productlist6 />
+        </SectionContainer> */}
+        <SectionContainer>
+          <ProductSection />
         </SectionContainer>
       </div>
     </MantineProvider>
