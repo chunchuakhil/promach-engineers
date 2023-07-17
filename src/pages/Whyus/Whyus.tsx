@@ -94,7 +94,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export function FeaturesCards() {
+export function Whyus() {
   const { classes, theme } = useStyles();
   const features = mockdata.map((feature) => (
     <Card key={feature.title} shadow="md" radius="md" className={classes.card} padding="xl">
@@ -109,7 +109,7 @@ export function FeaturesCards() {
   ));
 
   return (
-    <Container size="lg" py="xl">
+    <Container size="md" py="xl">
       <Group position="center">
         <Badge variant="filled" size="lg">
           Best company ever
