@@ -1,78 +1,75 @@
-import { Grid, Skeleton, Container, Image, createStyles} from '@mantine/core';
-import { useMediaQuery } from '@mantine/hooks';
-
-import React, { useState} from 'react';
+import { createStyles, SimpleGrid, Card, Image, Text, Container, AspectRatio } from '@mantine/core'
 
 const mockdata = [
   {
-    title: 'Best forests to visit in North America',
-    image: 'https://www.promach.in/assets/images/about13.jpg',
+    title: 'Silica Series',
+    image:
+      'https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
   },
   {
-    title: 'Best forests to visit in North America',
-    image: 'https://www.promach.in/assets/images/about3.jpg',
+    title: 'Construction Sand',
+    image:
+      'https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
   },
   {
-    title: 'Best forests to visit in North America',
-    image: 'https://www.promach.in/assets/images/about13.jpg',
+    title: 'Silica Series',
+    image:
+      'https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
   },
   {
-    title: 'Best forests to visit in North America',
-    image: 'https://www.promach.in/assets/images/about3.jpg',
+    title: 'Construction Sand',
+    image:
+      'https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
   },
-  // Rest of the data
-];
+  {
+    title: 'Silica Series',
+    image:
+      'https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
+  },
+  {
+    title: 'Construction Sand',
+    image:
+      'https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
+  },
+]
 
 const useStyles = createStyles((theme) => ({
   card: {
     transition: 'transform 150ms ease, box-shadow 150ms ease',
+
     '&:hover': {
-      transform: 'scale(1.03)',
+      transform: 'scale(1.01)',
       boxShadow: theme.shadows.md,
     },
   },
-}));
 
-export function GallerySection() {
-  const { classes } = useStyles();
-  const [errorImages, setErrorImages] = useState<number[]>([]);
+  title: {
+    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontWeight: 600,
+    textAlign: 'center',
+  },
+}))
 
-  const handleImageError = (index: number) => {
-    setErrorImages((prevErrorImages: number[]) => [...prevErrorImages, index]);
-  };
+const GallerySection = () => {
+  const { classes } = useStyles()
 
-  const isLaptopL = useMediaQuery('(min-width: 1440px)');
-  const isLaptopM = useMediaQuery('(min-width: 1024px) and (max-width: 1439px)');
-  const isTablet = useMediaQuery('(max-width: 768px)');
-  const isMobileL = useMediaQuery('(max-width: 425px)');
-  const isMobileM = useMediaQuery('(max-width: 375px)');
-  const isMobileS = useMediaQuery('(max-width: 320px)');
+  const cards = mockdata.map((article) => (
+    <Card key={article.title} p='md' radius='md' component='a' href='#' className={classes.card}>
+      <AspectRatio ratio={1920 / 1080}>
+        <Image src={article.image} />
+      </AspectRatio>
+      <Text className={classes.title} mt={5}>
+        {article.title}
+      </Text>
+    </Card>
+  ))
 
   return (
-    <Container my="md">
-      <Grid>
-        {mockdata.map((item, index) => (
-          <Grid.Col key={index} xs={6} className={classes.card}>
-            {errorImages.includes(index) ? (
-              <Skeleton
-                width={isMobileS ? 288 : isMobileM ? 343 : isMobileL ? 394 : isTablet ? 360 : isLaptopM || isLaptopL ? 456 : 288}
-                height={isMobileS ? 263 : isMobileM ? 263 : isMobileL ? 301 : isTablet ? 276 : isLaptopM || isLaptopL ? 349 : 221}
-              />
-            ) : (
-              <>
-                <Image
-                  src={item.image}
-                  maw={500}
-                  radius="md"
-                  alt={item.title}
-                  onError={() => handleImageError(index)}
-                />
-                <h3>{item.title}</h3>
-              </>
-            )}
-          </Grid.Col>
-        ))}
-      </Grid>
+    <Container py='xl'>
+      <SimpleGrid cols={3} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
+        {cards}
+      </SimpleGrid>
     </Container>
-  );
+  )
 }
+export default GallerySection

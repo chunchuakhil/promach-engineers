@@ -5,17 +5,14 @@ import { CarouselCard } from './components/Caros/Caros'
 import { AboutSection } from './pages/About/About'
 import SectionContainer from './components/sectionContainer/SectionContainer'
 import { FeaturesCards } from './pages/Whyus/Whyus'
-import {Productlist1} from './ProductPages/Productlist1'
-import { Productlist2 } from './ProductPages/Productlist2'
-import { Productlist3 } from './ProductPages/Productlist3'
-import { Productlist4 } from './ProductPages/Productlist4'
-import { Productlist5 } from './ProductPages/Productlist5'
-import { Productlist6 } from './ProductPages/Productlist6'
-import { GallerySection } from './pages/gallery/Gallery'
-import ProductSection  from './pages/Product/ProductSection'
-// import { ProductSection } from './pages/Product/ProductSection'
-// import {GallerySection1} from './pages/gallery/Gallery1'
-// import { GallerySection1 } from './pages/gallery/Gallery1'
+import GallerySection from './pages/gallery/Gallery'
+import ProductSection from './pages/Product/ProductSection'
+import './App.css'
+import SectionTitle from './components/sectionTitle/SectionTitle'
+import { TestimonialSection } from './pages/TestimonialSection/TestimonialSection'
+import { ContactSection } from './sections/contact/ContactSection'
+import CaseStudySection from './sections/caseStudy/CaseStudySection'
+import { FooterSection } from './sections/footer/FooterSection'
 
 export default function App() {
   return (
@@ -24,36 +21,37 @@ export default function App() {
       <div style={{ marginTop: HEADER_HEIGHT }}>
         {/* <SectionContainer>
           <CarouselCard />
-        </SectionContainer>
+        </SectionContainer>  */}
         <SectionContainer>
           <AboutSection />
-        </SectionContainer> */}
+        </SectionContainer>
         <SectionContainer>
+          <div className='products-container'>
+            <SectionTitle title='Our Products' />
+            <ProductSection />
+          </div>
+        </SectionContainer>
+        <SectionContainer>
+          <SectionTitle title='Case Study' />
+          <CaseStudySection />
+        </SectionContainer>
+        <SectionContainer>
+          <SectionTitle title='Gallery' />
           <GallerySection />
         </SectionContainer>
-        {/* <SectionContainer>
+        <SectionContainer>
           <FeaturesCards />
         </SectionContainer>
         <SectionContainer>
-          <Productlist1 />
+          <SectionTitle title='Testimonials' />
+          <TestimonialSection />
         </SectionContainer>
         <SectionContainer>
-          <Productlist2 />
+          <SectionTitle title='Contact us' />
+          <ContactSection />
         </SectionContainer>
         <SectionContainer>
-          <Productlist3 />
-        </SectionContainer>
-        <SectionContainer>
-          <Productlist4 />
-        </SectionContainer>
-        <SectionContainer>
-          <Productlist5 />
-        </SectionContainer>
-        <SectionContainer>
-          <Productlist6 />
-        </SectionContainer> */}
-        <SectionContainer>
-          <ProductSection />
+          <FooterSection />
         </SectionContainer>
       </div>
     </MantineProvider>

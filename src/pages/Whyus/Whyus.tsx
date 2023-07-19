@@ -8,8 +8,8 @@ import {
   SimpleGrid,
   Container,
   rem,
-} from '@mantine/core';
-import { IconGauge, IconUser, IconCookie } from '@tabler/icons-react';
+} from '@mantine/core'
+import { IconGauge, IconUser, IconCookie } from '@tabler/icons-react'
 
 const mockdata = [
   {
@@ -48,7 +48,7 @@ const mockdata = [
       'They’re popular, but they’re rare. Trainers who show them off recklessly may be targeted by thieves',
     icon: IconCookie,
   },
-];
+]
 
 const useStyles = createStyles((theme) => ({
   title: {
@@ -92,42 +92,42 @@ const useStyles = createStyles((theme) => ({
       marginTop: theme.spacing.sm,
     },
   },
-}));
+}))
 
 export function FeaturesCards() {
-  const { classes, theme } = useStyles();
+  const { classes, theme } = useStyles()
   const features = mockdata.map((feature) => (
-    <Card key={feature.title} shadow="md" radius="md" className={classes.card} padding="xl">
+    <Card key={feature.title} shadow='md' radius='md' className={classes.card} padding='xl'>
       <feature.icon size={rem(50)} stroke={2} color={theme.fn.primaryColor()} />
-      <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
+      <Text fz='lg' fw={500} className={classes.cardTitle} mt='md'>
         {feature.title}
       </Text>
-      <Text fz="sm" c="dimmed" mt="sm">
+      <Text fz='sm' c='dimmed' mt='sm'>
         {feature.description}
       </Text>
     </Card>
-  ));
+  ))
 
   return (
-    <Container size="lg" py="xl">
-      <Group position="center">
-        <Badge variant="filled" size="lg">
+    <Container size='lg' py='xl'>
+      <Group position='center'>
+        <Badge variant='filled' size='lg'>
           Best company ever
         </Badge>
       </Group>
 
-      <Title order={2} className={classes.title} ta="center" mt="sm">
-      Why Choose Us?
+      <Title order={2} className={classes.title} ta='center' mt='sm'>
+        Why Choose Us?
       </Title>
 
-      <Text c="dimmed" className={classes.description} ta="center" mt="md">
+      <Text c='dimmed' className={classes.description} ta='center' mt='md'>
         Every once in a while, you’ll see a Golbat that’s missing some fangs. This happens when
         hunger drives it to try biting a Steel-type Pokémon.
       </Text>
 
-      <SimpleGrid cols={3} spacing="xl" mt={50} breakpoints={[{ maxWidth: 'md', cols: 1 }]}>
+      <SimpleGrid cols={3} spacing='xl' mt={50} breakpoints={[{ maxWidth: 'md', cols: 1 }]}>
         {features}
       </SimpleGrid>
     </Container>
-  );
+  )
 }

@@ -1,38 +1,65 @@
-import './ProductSection.css';
+import { createStyles, SimpleGrid, Card, Image, Text, Container, AspectRatio } from '@mantine/core'
+
+const mockdata = [
+  {
+    title: 'Silica Series',
+    image:
+      'https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
+  },
+  {
+    title: 'Construction Sand',
+    image:
+      'https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
+  },
+]
+
+const useStyles = createStyles((theme) => ({
+  card: {
+    transition: 'transform 150ms ease, box-shadow 150ms ease',
+
+    '&:hover': {
+      transform: 'scale(1.01)',
+      boxShadow: theme.shadows.md,
+    },
+  },
+
+  title: {
+    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontWeight: 600,
+    textAlign: 'center',
+    fontSize:20
+  },
+}))
 
 const ProductSection = () => {
-  return (
-    <section className='section-products'>
-      <div className='container'>
-        <span className='subheading'>What we do</span>
-        <h2 className='heading-secondary'>Our products</h2>
-      </div>
-      <div className='container container-grid'>
-        <div className='products'>
-          <a href='#' className='img-link'>
-            <img src='https://www.promach.in/assets/images/about3.jpg' alt='product images' className='product-img' />
-          </a>
-          <a href='#' className='link-page'>
-            <h3 className='heading-tertiary'>Vertical Shaft Impactor</h3>
-          </a>
-          <p className='product-info'>
-            Vertical Shaft Impactor (VSI) crushers are designed to be used in tertiary or quaternary stage crushing.
-          </p>
-        </div>
-        <div className='products'>
-          <a href='#' className='img-link'>
-            <img src='https://www.promach.in/assets/images/about3.jpg' alt='product images' className='product-img' />
-          </a>
-          <a href='#' className='link-page'>
-            <h3 className='heading-tertiary'>Vibrating Screens</h3>
-          </a>
-          <p className='product-info'>
-            Vibrating Screens are the most important screening machines primarily utilised in the mineral processing industry.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-};
+  const { classes } = useStyles()
 
-export default ProductSection;
+  const cards = mockdata.map((article) => (
+    <Card
+      shadow='sm'
+      withBorder
+      key={article.title}
+      p='0'
+      radius='md'
+      component='a'
+      href='#'
+      className={classes.card}
+    >
+      <AspectRatio ratio={1920 / 1080}>
+        <Image src={article.image} />
+      </AspectRatio>
+      <Text className={classes.title} my={20}>
+        {article.title}
+      </Text>
+    </Card>
+  ))
+
+  return (
+    <Container py='xl'>
+      <SimpleGrid cols={2} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
+        {cards}
+      </SimpleGrid>
+    </Container>
+  )
+}
+export default ProductSection

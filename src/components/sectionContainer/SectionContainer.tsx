@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
 import { Container } from '@mantine/core'
+import { secondaryThemeColor } from '../../theme/themeColors'
 
 interface SectionContainerProps {
   children: ReactNode
@@ -7,7 +8,7 @@ interface SectionContainerProps {
 
 const SectionContainer = ({ children }: SectionContainerProps) => {
   return (
-    <Container mih={'100vh'} miw={'100vw'} pl={0} pr={0}>
+    <Container pl={0} pr={0} bg={secondaryThemeColor}>
       {children}
     </Container>
   )
