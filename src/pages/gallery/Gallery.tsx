@@ -1,4 +1,5 @@
 import { createStyles, SimpleGrid, Card, Image, Text, Container, AspectRatio } from '@mantine/core'
+import { primaryThemeColor } from '../../theme/themeColors'
 
 const mockdata = [
   {
@@ -47,6 +48,7 @@ const useStyles = createStyles((theme) => ({
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontWeight: 600,
     textAlign: 'center',
+    color: primaryThemeColor,
   },
 }))
 

@@ -1,15 +1,9 @@
 import {
   createStyles,
-  Badge,
-  Group,
   Title,
-  Text,
-  Card,
-  SimpleGrid,
-  Container,
   rem,
 } from '@mantine/core'
-import { IconGauge, IconUser, IconCookie } from '@tabler/icons-react'
+// import { IconGauge, IconUser, IconCookie } from '@tabler/icons-react'
 import { primaryThemeColor } from '../../theme/themeColors'
 
 const useStyles = createStyles((theme) => ({
