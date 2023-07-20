@@ -1,15 +1,12 @@
 import {
   Container,
   SimpleGrid,
-  rem,
   Card,
   Group,
   Text,
-  Spoiler,
   Rating,
-  Blockquote,
 } from '@mantine/core'
-const PRIMARY_COL_HEIGHT = rem(300)
+// const PRIMARY_COL_HEIGHT = rem(300)
 
 export function TestimonialSection() {
   const CardTemplete = (
@@ -22,17 +19,17 @@ export function TestimonialSection() {
             style={{ borderRadius: '50%', width: '74px', height: '74px' }}
           />
           <div>
-            <Text fz='xs' tt='uppercase' fw={700} c='dimmed'>
+            <Text fz='xs' tt='uppercase' fw={700} c='dimmed' >
               Software Engineer
             </Text>
-            <Text fz='lg' fw={500}>
+            <Text fz='lg' fw={500} color='#063f63'>
               Extra small text
             </Text>
           </div>
         </Group>
       </Card.Section>
       <Group position='apart' mt='md' mb='xs'>
-        <Text weight={500}>It is a great Experience</Text>
+        <Text weight={500} color='#063f63'>It is a great Experience</Text>
         <Rating defaultValue={4.5} />
       </Group>
       <Text size='sm' color='dimmed'>

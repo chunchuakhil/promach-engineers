@@ -1,4 +1,5 @@
 import { createStyles, SimpleGrid, Card, Image, Text, Container, AspectRatio } from '@mantine/core'
+import { primaryThemeColor } from '../../theme/themeColors'
 
 const mockdata = [
   {
@@ -28,6 +29,7 @@ const useStyles = createStyles((theme) => ({
     fontWeight: 600,
     textAlign: 'center',
     fontSize: 20,
+    color: primaryThemeColor,
   },
 }))
 

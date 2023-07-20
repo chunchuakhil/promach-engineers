@@ -1,7 +1,7 @@
 import { MantineProvider } from '@mantine/core'
 import { HEADER_HEIGHT, HeaderResponsive } from './components/HeaderResponsive'
 import { appLinks } from './routes/Applinks'
-import { CarouselCard } from './components/Caros/Caros'
+// import { CarouselCard } from './components/Caros/Caros'
 import { AboutSection } from './pages/About/About'
 import SectionContainer from './components/sectionContainer/SectionContainer'
 import { FeaturesCards } from './pages/Whyus/Whyus'
@@ -22,6 +22,7 @@ export default function App() {
         {/* <SectionContainer>
           <CarouselCard />
         </SectionContainer>  */}
+
         <SectionContainer>
           <AboutSection />
         </SectionContainer>

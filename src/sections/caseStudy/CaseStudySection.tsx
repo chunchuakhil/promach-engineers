@@ -1,6 +1,7 @@
 import { Carousel } from '@mantine/carousel'
 import { useMediaQuery } from '@mantine/hooks'
-import { createStyles, Paper, Text, Title, Button, useMantineTheme, rem } from '@mantine/core'
+import { createStyles, Paper, Text, Title, useMantineTheme, rem } from '@mantine/core'
+import {Btn}  from '../../components/Button/Button'
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -55,9 +56,10 @@ function Card({ image, title, category }: CardProps) {
           {title}
         </Title>
       </div>
-      <Button variant='white' color='dark'>
+      {/* <Button variant='white' color='dark'>
         Read article
-      </Button>
+      </Button> */}
+      <Btn name='article'/>
     </Paper>
   )
 }

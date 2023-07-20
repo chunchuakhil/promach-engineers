@@ -1,15 +1,16 @@
-import { createStyles, Container, Title, Text, Image, Button, rem, MediaQuery } from '@mantine/core'
+import { createStyles, Container, Title, Text, Image, rem, MediaQuery } from '@mantine/core'
+import { Btn } from '../../components/Button/Button'
 // import { AboutPage } from './AboutPage';
 // import React, { useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
 
 const useStyles = createStyles((theme) => ({
   root: {
-    backgroundColor: '#11284b',
+    backgroundColor: '#063f63',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    backgroundImage:
-      'linear-gradient(250deg, rgba(130, 201, 30, 0) 0%, #062343 70%), url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80)',
+    // backgroundImage:
+      // 'linear-gradient(250deg, rgba(130, 201, 30, 0) 0%, #062343 70%), url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80)',
     paddingTop: `calc(${theme.spacing.xl} * 3)`,
     paddingBottom: `calc(${theme.spacing.xl} * 3)`,
   },
@@ -78,10 +79,10 @@ const useStyles = createStyles((theme) => ({
   img: {},
 }))
 
-const handleClick = () => {
-  console.log('Read me')
-  alert('AboutPage has to open')
-}
+// const handleClick = () => {
+//   console.log('Read me')
+//   alert('AboutPage has to open')
+// }
 
 export function AboutSection() {
   const { classes } = useStyles()
@@ -105,13 +106,9 @@ export function AboutSection() {
               equipment and accessories. With a focus on providing unique engineering solutions to
               the challenges encountered in the mining industry, Promach aims to develop accessories
               that are both efficient and affordable.
-              {/* The company adopts a customer-centric approach, prioritizing the needs and requirements of its clients.
-              Additionally, Promach is dedicated to maintaining the highest standards of quality,
-              constantly striving to achieve unparalleled expertise in the field. By addressing the specific demands of the mining sector,
-              Promach contributes to enhancing productivity, safety, and sustainability in this crucial industry.
-            */}
+              
             </Text>
-            <Button
+            {/* <Button
               variant='gradient'
               gradient={{ from: 'pink', to: 'yellow' }}
               size='xl'
@@ -120,8 +117,8 @@ export function AboutSection() {
               onClick={handleClick}
             >
               Read More
-            </Button>
-            {/* {showAboutPage && <AboutPage />} */}
+            </Button> */}
+              <Btn name='Read more'/>
           </div>
 
           {/* 2nd Div container In about section */}
