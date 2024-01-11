@@ -15,6 +15,7 @@ import CaseStudySection from './sections/caseStudy/CaseStudySection'
 import { FooterSection } from './sections/footer/FooterSection'
 
 export default function App() {
+  // working projects
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS>
       <HeaderResponsive links={appLinks.links} />
