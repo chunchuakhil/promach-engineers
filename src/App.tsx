@@ -6,6 +6,7 @@ import { AboutSection } from './components/About'
 
 
 export default function App() {
+  // working projects
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS>
       <HeaderResponsive links={appLinks.links} />
