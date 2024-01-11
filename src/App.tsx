@@ -23,9 +23,9 @@ export default function App() {
           <CarouselCard />
         </SectionContainer>  */}
 
-        <SectionContainer>
+        {/* <SectionContainer>
           <AboutSection />
-        </SectionContainer>
+        </SectionContainer> */}
         <SectionContainer>
           <div className='products-container'>
             <SectionTitle title='Our Products' />
